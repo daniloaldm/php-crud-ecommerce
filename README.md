@@ -32,9 +32,9 @@ https://github.com/daniloaldm/crudPHP.git
 Agora você está pronto para executar, mas lembre-se de alterar suas credenciais de banco de dados dentro de classes/config.php:
 
 > define('DB_HOST', 'localhost');
-define('DB_NAME', 'ecommerce');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+> define('DB_NAME', 'ecommerce');
+> define('DB_USER', 'root');
+> define('DB_PASS', '');
 
 # Execução
 
