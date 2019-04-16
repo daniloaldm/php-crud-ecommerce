@@ -8,40 +8,43 @@
 
 #  Descrição
 
-O dono de um estabelecimento solicitou que fosse desenvolvido uma aplicação, no qual
-fosse possível manipular uma lista de tarefas contendo informações úteis para ele.
-Após um levantamento de informações com o cliente, chegamos em um acordo:
-Uma tarefa deve possuir as seguintes informações:
-- id: identificador único da tarefa, para facilitar a identificação. (Ex.: 1, 2, 3...);
-- nome: nome da tarefa. (Ex.: Preparar o almoço);
-- descrição: uma breve descrição a respeito do que é a tarefa. (Ex.: O almoço será
-frango...);
-- prazo: Data limite para que seja feito a tarefa. (Ex.: 21/09/18 12:00:00);
-- prioridade: A prioridade que definirá qual tarefa será executada primeiro. (Ex.:
-Média);
-- concluída: Informar se a tarefa já foi executada;
+Nessa fase os candidatos enviam um CRUD de produtos.
+
+Os atributo desses produtos são:
+
+- Nome
+- Preço
+- Descrição
+- Imagem
 
 #  Condições do Projeto
 
- - Todas as etapas do projeto deverão ser versionadas com o git;
- - O código deverá ser escrito em PHP ou Node, usando arquitetura MVC;
- - API baseada em REST;
- - Tratamento de erros;
+   - Intenção é analisar código e criatividade no desenvolvimento. Escreva o menor número de linhas possível e use o máximo de conhecimento que você tem;
+   - Não pode usar nenhum framework PHP. O teste deve ser feito usando PHP puro;
+   - Não precisa se preocupar com frontend. Pode apresentar o teste usando Bootstrap ou qualquer outro framework css de sua preferencia;
 
 #  Instalação
 
 Faça o download ou clone o repositório
-https://github.com/daniloaldm/secrel-challenge.git
+https://github.com/daniloaldm/crudPHP.git
 
+
+Agora você está pronto para executar, mas lembre-se de alterar suas credenciais de banco de dados dentro de classes/config.php:
+
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'ecommerce');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 
 # Execução
 
-Running with PHP built in server(inside project root folder):
+Navegue até a pasta do projeto via terminal, e execute o comando
 ```
 php -S localhost:8080
 ```
+Acesse http://localhost/8080 no browser
 
-No próprio repositório tem um documento .SQL, que é o script pra banco, basta importar ele no seu banco de dados, e utilizá-lo para a aplicação.
+No próprio repositório tem um documento .SQL, que é o script pro banco de dados, basta importar ele no seu banco de dados,e utilizá-lo para a aplicação.
 
 # Autor
 
