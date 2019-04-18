@@ -18,12 +18,12 @@ function __autoload($class_name)
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-
 	<!-- Styles -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap.css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -33,7 +33,6 @@ function __autoload($class_name)
 	<script src="js/jQuery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 
 </head>
 
@@ -109,7 +108,6 @@ function __autoload($class_name)
 
 		<?php
 		if (isset($_GET['acao']) && $_GET['acao'] == 'editar') {
-
 			$id = (int)$_GET['id'];
 			$resultado = $produtos->find($id);
 			?>
@@ -119,27 +117,27 @@ function __autoload($class_name)
 					<div class="form-group col-md-2">
 						<label for="inputNome">Nome do produto:</label>
 						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="nome" value="<?php echo $resultado->nome; ?>" placeholder="ex:Produto" />
+						<input type="text" name="nome" class="w3-input" value="<?php echo $resultado->nome; ?>" placeholder="ex:Produto" />
 					</div>
 
 					<div class="form-group col-md-2">
 						<label for="inputNome">Preço:</label>
 						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="preco" value="<?php echo $resultado->preco; ?>" placeholder="ex:9.99" onkeyup="somenteNumeros(this);" />
+						<input type="text" name="preco" class="w3-input" value="<?php echo $resultado->preco; ?>" placeholder="ex:9.99" onkeyup="somenteNumeros(this);" />
 					</div>
 
-
-					<div class="form-group col-md-3">
-						<label for="inputNome">Descrição:</label>
-						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="descricao" value="<?php echo $resultado->descricao; ?>" placeholder="" />
-					</div>
 
 					<div class="form-group col-md-2">
 						<label for="inputNome">Imagem:</label>
 						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="imagem" value="<?php echo $resultado->imagem; ?>" placeholder="ex:img.png" />
+						<input type="text" name="imagem" class="w3-input" value="<?php echo $resultado->imagem; ?>" placeholder="ex:img.png" />
 					</div>
+				</div>
+
+				<div class="form-group col-md-3">
+					<label for="inputNome">Descrição:</label>
+					<span class="add-on"><i class=""></i></span>
+					<input type="text" name="descricao" class="w3-input" value="<?php echo $resultado->descricao; ?>" placeholder="" />
 				</div>
 
 				<input type="hidden" name="id" value="<?php echo $resultado->id; ?>">
@@ -156,27 +154,28 @@ function __autoload($class_name)
 					<div class="form-group col-md-2">
 						<label for="inputNome">Nome do produto:</label>
 						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="nome" placeholder="ex:Produto" />
+						<input type="text" name="nome" class="w3-input" placeholder="ex:Produto" />
 					</div>
 
 					<div class="form-group col-md-2">
 						<label for="inputNome">Preço:</label>
 						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="preco" placeholder="ex:9.99" onkeyup="somenteNumeros(this);" />
+						<input type="text" name="preco" class="w3-input" placeholder="ex:9.99" onkeyup="somenteNumeros(this);" />
 					</div>
 
+				
+					<div class="form-group col-md-2">
+						<label for="inputNome">Imagem:</label>
+						<span class="add-on"><i class=""></i></span>
+						<input type="text" name="imagem" class="w3-input" placeholder="ex:img.png" />
+					</div>
 
 					<div class="form-group col-md-3">
 						<label for="inputNome">Descrição:</label>
 						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="descricao" placeholder="" />
+						<input type="text" name="descricao" class="w3-input" placeholder="" />
 					</div>
 
-					<div class="form-group col-md-2">
-						<label for="inputNome">Imagem:</label>
-						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="imagem" placeholder="ex:img.png" />
-					</div>
 				</div>
 
 				<div class="form-group col-md-12">
