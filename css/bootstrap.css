@@ -46,6 +46,7 @@
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: auto;
   *zoom: 1;
 }
 
@@ -2067,6 +2068,7 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  
 }
 
 .container:before,
@@ -5813,7 +5815,7 @@ input[type="submit"].btn.btn-mini {
   min-height: 40px;
   padding-right: 20px;
   padding-left: 20px;
-  background-color: #fafafa;
+  background-color: #1317e2;
   background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
   background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
@@ -7605,3 +7607,4 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+

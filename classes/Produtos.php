@@ -2,7 +2,7 @@
 
 require_once 'Crud.php';
 
-class Tarefas extends Crud{
+class Produtos extends Crud{
 	
 	protected $table = 'tb_produtos';
 	private $nome;
@@ -14,11 +14,11 @@ class Tarefas extends Crud{
 		$this->nome = $nome;
 	}
 
-	/*
+	
 	public function getNome(){
 		return $this->nome;
 	}
-	*/
+	
 
 	public function setPreco($preco){
 		$this->preco = $preco;
