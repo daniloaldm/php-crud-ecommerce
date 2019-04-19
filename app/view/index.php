@@ -144,7 +144,7 @@
 
 					<div class="form-group col-md-2">
 						<label for="inputNome">Imagem:</label>
-						<input type="file" name="imagem" placeholder="ex:img.png" />
+						<input type="file" name="imagem" class="" />
 					</div>
 
 				</div>

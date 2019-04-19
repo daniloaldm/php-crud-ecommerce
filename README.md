@@ -29,7 +29,7 @@ Faça o download ou clone o repositório
 https://github.com/daniloaldm/crudPHP.git
 
 
-Agora você está pronto para executar, mas lembre-se de alterar suas credenciais de banco de dados dentro de classes/config.php:
+Agora você está pronto para executar, mas lembre-se de alterar suas credenciais de banco de dados dentro de app/config/config.php:
 
 ```
 define('DB_HOST', 'localhost');
