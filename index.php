@@ -20,20 +20,19 @@ function __autoload($class_name)
 
 	<!-- Styles -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<link href="css/lightbox.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="public/css/bootstrap.css" />
+	<link href="public/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="public/css/lightbox.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="js/ajax.js"></script>
-	<script src="js/lightbox.js"></script>
-	<script language="javascript" type="text/javascript" src="js/validaForm.js"></script>
-	<script src="js/jQuery.js"></script>
-	<script src="js/bootstrap.js"></script>
+	<script src="public/js/ajax.js"></script>
+	<script src="public/js/lightbox.js"></script>
+	<script language="javascript" type="text/javascript" src="public/js/validaForm.js"></script>
+	<script src="public/js/jQuery.js"></script>
+	<script src="public/js/bootstrap.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 </head>
 
 <body>
@@ -43,19 +42,14 @@ function __autoload($class_name)
 		<?php
 		$produtos = new Produtos();
 		if (isset($_POST['cadastrar'])) :
-
-			$nome  = $_POST['nome'];
-			$preco = $_POST['preco'];
-			$descricao = $_POST['descricao'];
-			$imagem = $_POST['imagem'];
-
-			$produtos->setNome($nome);
-			$produtos->setPreco($preco);
-			$produtos->setDescricao($descricao);
-			$produtos->setImagem($imagem);
-
+			$parametros = array(
+				'nome' 		=> $_POST['nome'],
+				'preco' 	=> $_POST['preco'],
+				'descricao' => $_POST['descricao'],
+				'imagem' 	=> $_POST['imagem']
+			);
 			# Insert
-			if ($produtos->insert()) {
+			if ($produtos->insert($parametros)) {
 				echo "<h2>Inserido com sucesso!</h2>";
 			}
 		endif;
@@ -76,19 +70,14 @@ function __autoload($class_name)
 
 		<?php
 		if (isset($_POST['atualizar'])) :
-
-			$id = $_POST['id'];
-			$nome = $_POST['nome'];
-			$preco = $_POST['preco'];
-			$descricao = $_POST['descricao'];
-			$imagem = $_POST['imagem'];
-
-			$produtos->setNome($nome);
-			$produtos->setPreco($preco);
-			$produtos->setDescricao($descricao);
-			$produtos->setImagem($imagem);
-
-			if ($produtos->update($id)) {
+			$parametros = array(
+				'id'		=> $_POST['id'],
+				'nome'		=> $_POST['nome'],
+				'preco'		=> $_POST['preco'],
+				'descricao'	=> $_POST['descricao'],
+				'imagem'	=> $_POST['imagem']
+			);
+			if ($produtos->update($parametros)) {
 				echo "<h1>Atualizado com sucesso!</h1>";
 			}
 
@@ -116,31 +105,22 @@ function __autoload($class_name)
 				<div class="form-row">
 					<div class="form-group col-md-2">
 						<label for="inputNome">Nome do produto:</label>
-						<span class="add-on"><i class=""></i></span>
 						<input type="text" name="nome" class="w3-input" value="<?php echo $resultado->nome; ?>" placeholder="ex:Produto" />
 					</div>
 
 					<div class="form-group col-md-2">
 						<label for="inputNome">Preço:</label>
-						<span class="add-on"><i class=""></i></span>
 						<input type="text" name="preco" class="w3-input" value="<?php echo $resultado->preco; ?>" placeholder="ex:9.99" onkeyup="somenteNumeros(this);" />
 					</div>
 
 
-					<div class="form-group col-md-2">
-						<label for="inputNome">Imagem:</label>
-						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="imagem" class="w3-input" value="<?php echo $resultado->imagem; ?>" placeholder="ex:img.png" />
+					<div class="form-group col-md-3">
+						<label for="inputNome">Descrição:</label>
+						<input type="text" name="descricao" class="w3-input" value="<?php echo $resultado->descricao; ?>" placeholder="" />
 					</div>
-				</div>
 
-				<div class="form-group col-md-3">
-					<label for="inputNome">Descrição:</label>
-					<span class="add-on"><i class=""></i></span>
-					<input type="text" name="descricao" class="w3-input" value="<?php echo $resultado->descricao; ?>" placeholder="" />
+					<input type="hidden" name="id" value="<?php echo $resultado->id; ?>">
 				</div>
-
-				<input type="hidden" name="id" value="<?php echo $resultado->id; ?>">
 
 				<div class="form-group col-md-9">
 					<input type="submit" name="atualizar" class="btn btn-primary" value="Atualizar dados" onclick="return validar_form()">
@@ -153,27 +133,22 @@ function __autoload($class_name)
 				<div class=" form-row">
 					<div class="form-group col-md-2">
 						<label for="inputNome">Nome do produto:</label>
-						<span class="add-on"><i class=""></i></span>
 						<input type="text" name="nome" class="w3-input" placeholder="ex:Produto" />
 					</div>
 
 					<div class="form-group col-md-2">
 						<label for="inputNome">Preço:</label>
-						<span class="add-on"><i class=""></i></span>
 						<input type="text" name="preco" class="w3-input" placeholder="ex:9.99" onkeyup="somenteNumeros(this);" />
-					</div>
-
-				
-					<div class="form-group col-md-2">
-						<label for="inputNome">Imagem:</label>
-						<span class="add-on"><i class=""></i></span>
-						<input type="text" name="imagem" class="w3-input" placeholder="ex:img.png" />
 					</div>
 
 					<div class="form-group col-md-3">
 						<label for="inputNome">Descrição:</label>
-						<span class="add-on"><i class=""></i></span>
 						<input type="text" name="descricao" class="w3-input" placeholder="" />
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="inputNome">Imagem:</label>
+						<input type="file" name="imagem" placeholder="ex:img.png" />
 					</div>
 
 				</div>
@@ -207,8 +182,8 @@ function __autoload($class_name)
 						<td><?php echo $value->preco; ?></td>
 						<td><?php echo $value->descricao; ?></td>
 						<td id="center">
-							<a href="http://localhost/crudPHP/produtos/1<?php echo $value->imagem; ?>" data-lightbox="http://localhost/crudPHP/produtos/1<?php echo $value->imagem; ?>">
-								<img src="http://localhost/crudPHP/produtos/<?php echo $value->imagem; ?>" />
+							<a href="public/img/produtos/1<?php echo $value->imagem; ?>" data-lightbox="public/img/produtos/1<?php echo $value->imagem; ?>">
+								<img src="public/img/produtos/<?php echo $value->imagem; ?>" />
 							</a>
 						</td>
 
