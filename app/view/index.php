@@ -75,7 +75,7 @@
 				'nome'		=> $_POST['nome'],
 				'preco'		=> $_POST['preco'],
 				'descricao'	=> $_POST['descricao'],
-				'imagem'	=> $_POST['imagem']
+//				'imagem'	=> $_POST['imagem']
 			);
 			if ($produtos->update($parametros)) {
 				echo "<h1>Atualizado com sucesso!</h1>";

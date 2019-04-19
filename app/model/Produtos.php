@@ -25,7 +25,7 @@ class Produtos extends DB{
 			"UPDATE 
 				$this->table 
 			SET 
-				nome = :nome, preco = :preco, descricao = :descricao, imagem = :imagem 
+				nome = :nome, preco = :preco, descricao = :descricao
 			WHERE 
 				id = :id"
 		);
@@ -35,7 +35,7 @@ class Produtos extends DB{
 				":nome" 		=> $parametros->nome, 
 				":preco" 		=> $parametros->preco, 
 				":descricao" 	=> $parametros->descricao, 
-				":imagem" 		=> $parametros->imagem
+//				":imagem" 		=> $parametros->imagem
 			)
 		);
 	}
