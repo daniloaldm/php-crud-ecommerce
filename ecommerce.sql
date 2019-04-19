@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Abr-2019 às 20:13
+-- Generation Time: 19-Abr-2019 às 04:28
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -41,7 +41,7 @@ CREATE TABLE `tb_produtos` (
 --
 
 INSERT INTO `tb_produtos` (`id`, `nome`, `preco`, `descricao`, `imagem`) VALUES
-(53, 'Microfone2', '8.00', 'Novo', 'produto-menor (5).png'),
+(53, 'Microfone', '8.00', 'Novo Upadate', 'produto-menor (5).png'),
 (62, 'Controle', '108.00', 'Novo', 'produto-menor (1).png');
 
 --
@@ -62,7 +62,7 @@ ALTER TABLE `tb_produtos`
 -- AUTO_INCREMENT for table `tb_produtos`
 --
 ALTER TABLE `tb_produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
