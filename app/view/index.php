@@ -21,6 +21,8 @@
 	<link href="../public/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../public/css/lightbox.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	
 
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,6 +32,8 @@
 	<script src="../public/js/jQuery.js"></script>
 	<script src="../public/js/bootstrap.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	
 </head>
 
 <body>
@@ -142,9 +146,9 @@
 						<input type="text" name="descricao" class="w3-input" placeholder="" />
 					</div>
 
-					<div class="form-group col-md-2">
+					<div class="form-group col-md-3">
 						<label for="inputNome">Imagem:</label>
-						<input type="file" name="imagem" class="" />
+						<input type="file" name="imagem" class="custom-file-input" id="customFile" />
 					</div>
 
 				</div>
