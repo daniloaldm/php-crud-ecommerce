@@ -1,7 +1,10 @@
 <?php
-require_once 'app/config/DB.php';
+require_once 'app\config\DB.php';
 class Produtos extends DB{
-	protected $table = 'tb_produtos';
+	protected $table;
+	public function __construct() {
+		$this->table = 'tb_produtos';
+	}
 	public function insert($parametros = []){
 		$parametros = (object) $parametros;
 		$stmt = DB::prepare(
@@ -34,28 +37,32 @@ class Produtos extends DB{
 				":id"			=> $parametros->id,
 				":nome" 		=> $parametros->nome, 
 				":preco" 		=> $parametros->preco, 
-				":descricao" 	=> $parametros->descricao, 
-//				":imagem" 		=> $parametros->imagem
+				":descricao" 	=> $parametros->descricao
 			)
 		);
 	}
 	public function find($id){
-		$sql  = "SELECT * FROM $this->table WHERE id = :id";
-		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-		$stmt->execute();
+		$stmt = DB::prepare(
+			"SELECT * FROM 
+				$this->table 
+			WHERE 
+				id = :id"
+		);
+		$stmt->execute(array (":id"	=> $id));
 		return $stmt->fetch();
 	}
 	public function findAll(){
-		$sql  = "SELECT * FROM $this->table";
-		$stmt = DB::prepare($sql);
+		$stmt = DB::prepare("SELECT * FROM $this->table");
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
 	public function delete($id){
-		$sql  = "DELETE FROM $this->table WHERE id = :id";
-		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-		return $stmt->execute(); 
+		$stmt = DB::prepare(
+			"DELETE FROM 
+				$this->table 
+			WHERE 
+				id = :id"
+		);
+		return $stmt->execute(array(":id" => $id)); 
 	}
 }
