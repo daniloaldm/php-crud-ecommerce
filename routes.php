@@ -1,5 +1,5 @@
 <?php 
-require_once 'app\controller\ProdutosController.php';
+require_once 'app/controller/ProdutosController.php';
 $controller = new ProdutosController;
 if (isset($_POST['cadastrar'])) 
     $controller->addProduto($_POST);    

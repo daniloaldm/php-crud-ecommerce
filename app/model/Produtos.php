@@ -1,5 +1,5 @@
 <?php
-require_once 'app\config\DB.php';
+require_once 'app/config/DB.php';
 class Produtos extends DB{
 	protected $table;
 	public function __construct() {

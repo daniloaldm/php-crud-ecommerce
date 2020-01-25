@@ -1,5 +1,5 @@
 <?php 
-require_once 'app\model\Produtos.php';
+require_once 'app/model/Produtos.php';
 class ProdutosController {
     protected $classProduto;
     public function __construct () {
@@ -39,7 +39,7 @@ class ProdutosController {
         $_REQUEST['listagem'] = $listagem;
         $_REQUEST['auxiliar'] = $this->classProduto->delete($id);
         $_REQUEST['auxiliar'] = 'DELETAR';
-        header('Location: /'); 
+        header('Location: /php-crud-ecommerce'); 
         require_once 'app/view/index.php';  
     }
 }
