@@ -51,6 +51,3 @@ No próprio repositório tem um documento .SQL, que é o script pro banco de dad
 # Autor
 
 **Danilo Alexandrino de Miranda** - [GitHub](https://github.com/daniloaldm) - Email: [danilo.alexandrinodm@gmail.com](danilo.alexandrinodm@gmail.com)
-
-
-# crudPHP
